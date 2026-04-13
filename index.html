@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minnetonka Mahjong — Coming Soon</title>
+  <meta name="description" content="Minnetonka Mahjong is coming soon. Stay tuned.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Questrial&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #1e3352;
+      --slate: #7a9bb5;
+      --slate-light: #b0c7d8;
+      --cream: #f6f2ec;
+      --cream-dark: #ede7dd;
+      --warm-white: #faf8f5;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--cream);
+      color: var(--navy);
+      font-family: 'Questrial', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle radial glow behind content */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 800px;
+      height: 800px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(
+        circle,
+        rgba(176, 199, 216, 0.2) 0%,
+        rgba(176, 199, 216, 0.05) 40%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow:
+        0 4px 24px rgba(30, 51, 82, 0.08),
+        0 1px 4px rgba(30, 51, 82, 0.04);
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+      opacity: 0;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background-color: var(--slate-light);
+      margin: 2.5rem 0;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+      opacity: 0;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.25rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+      opacity: 0;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      color: var(--slate);
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+      opacity: 0;
+    }
+
+    /* Small decorative dots */
+    .dots {
+      display: flex;
+      gap: 6px;
+      margin-top: 3rem;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+      opacity: 0;
+    }
+
+    .dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--slate-light);
+    }
+
+    .dots span:nth-child(2) {
+      background-color: var(--slate);
+    }
+
+    @media (min-width: 640px) {
+      .logo {
+        width: 240px;
+        height: 240px;
+      }
+
+      h1 {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .logo {
+        width: 280px;
+        height: 280px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <img src="logo.jpg.jpeg" alt="Minnetonka Mahjong logo" class="logo">
+    <div class="divider"></div>
+    <h1>Coming Soon</h1>
+    <p class="subtitle">Something fun is on its way</p>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </main>
+</body>
+</html>
